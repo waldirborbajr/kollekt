@@ -1,0 +1,22 @@
+services:
+  kollekt:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    # networks:
+    #   - kollektnet
+
+  # api-python:
+  #   build:
+  #     context: ./remote/
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "5000:5000"
+  #   networks:
+  #     - kollektnet
+
+# networks:
+#   kollektnet:
+#     driver: bridge
