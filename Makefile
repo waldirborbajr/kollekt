@@ -15,9 +15,9 @@ build:
 
 rebuild:
 	@echo "\nForcing Rebuild...\n"
-	docker compose build --no-cache --force-rm --pull
+	@docker compose build --no-cache --force-rm --pull
 
-start:
+up:
 	@echo "\nStarting container...\n"
 	docker compose up -d --force-recreate
 
