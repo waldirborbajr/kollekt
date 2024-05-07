@@ -1,9 +1,10 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"time"
+
+	"github.com/rs/zerolog/log"
 
 	handlers "github.com/waldirborbajr/kollekt/internal"
 )
@@ -22,5 +23,5 @@ func main() {
 
 	log.Printf("Starting server on %s", s.Addr)
 	err := http.ListenAndServe(":4000", mux)
-	log.Fatal(err)
+	log.Fatal().Msgf("ERROR: %v", err)
 }
