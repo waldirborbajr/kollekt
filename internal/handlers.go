@@ -23,7 +23,7 @@ func Healthz(w http.ResponseWriter, r *http.Request) {
 	status := &statusCode{
 		Code:    http.StatusOK,
 		Status:  "Online",
-		Message: "API is running smoothly",
+		Message: "KolleKt API is running smoothly",
 	}
 
 	statusJson, _ := json.Marshal(status)
