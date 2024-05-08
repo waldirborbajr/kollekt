@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source .env
-
 SESSION_NAME="development"
 
 # small start tmux session for small monitor
