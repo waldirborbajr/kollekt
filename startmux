@@ -15,14 +15,11 @@ small() {
   tmux -u new-window -t $SESSION_NAME:1 -n "nvim"
   tmux send-keys -t $SESSION_NAME:1 'nvim' C-m
 
-  tmux -u new-window -t $SESSION_NAME:2 -n "ngrok"
-  tmux send-keys -t $SESSION_NAME:2 'ngrok http ${BOT_PORT}' C-m
+  tmux -u new-window -t $SESSION_NAME:2 -n "run"
+  tmux send-keys -t $SESSION_NAME:2 'make run' C-m
 
-  tmux -u new-window -t $SESSION_NAME:3 -n "run"
-  tmux send-keys -t $SESSION_NAME:3 'sleep 5 && source genURL && air' C-m
-
-  tmux -u new-window -t $SESSION_NAME:4 -n "Lazygit"
-  tmux send-keys -t $SESSION_NAME:4 'lazygit' C-m
+  tmux -u new-window -t $SESSION_NAME:3 -n "Lazygit"
+  tmux send-keys -t $SESSION_NAME:3 'lazygit' C-m
 
   # Attach to the newly created session
   tmux -u attach-session -t $SESSION_NAME:1

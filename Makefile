@@ -3,7 +3,7 @@ run: run-go
 
 run-go:
 	@echo "Starting Go API..."
-	@go run cmd/api/main.go &
+	go run cmd/api/main.go
 
 #
 # Development
@@ -15,7 +15,7 @@ build:
 
 rebuild:
 	@echo "\nForcing Rebuild...\n"
-	@docker compose build --no-cache --force-rm --pull
+	docker compose build --no-cache --force-rm --pull
 
 up:
 	@echo "\nStarting container...\n"
