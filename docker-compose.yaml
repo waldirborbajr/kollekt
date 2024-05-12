@@ -1,12 +1,22 @@
 services:
   kollekt:
+    stdin_open: true
+    tty: true
+    image: waldirborbajr/kollekt:dev
+    container_name: kollekt
+    hostname: kollekt
     build:
       context: ./
       dockerfile: Dockerfile
     ports:
       - "4000:4000"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
     # networks:
-    #   - kollektnet
+    #   - kollekt_network
 
   # api-python:
   #   build:
@@ -18,5 +28,11 @@ services:
   #     - kollektnet
 
 # networks:
-#   kollektnet:
-#     driver: bridge
+#   kollekt_network:
+#     # driver: bridge
+#     external: true
+#     attachable: true
+#
+# volumes:
+#   kollekt_data:
+#     external: true
