@@ -1,7 +1,7 @@
 # Build Stage
 FROM golang:1.22-alpine as builder
 
-RUN apk add --update --no-cache git alsa-lib-dev gcc musl-dev
+RUN apk update 
 
 WORKDIR /go/src/app
 
