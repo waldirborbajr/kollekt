@@ -93,7 +93,7 @@ services:
 networks:
   kollekt_network:
     name: kollekt_network
-    driver: bridge
+    external: true
 
 # volumes:
 #   kollekt_data:

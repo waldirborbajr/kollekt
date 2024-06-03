@@ -1,3 +1,8 @@
+VERSION=$(shell cat VERSION)
+GOFLAGS=ldflags "-X main.Version=$(VERSION)"
+PROJECT=waldirborbajr/kollekt
+
+
 .PHONY: help
 run: help
 
@@ -12,6 +17,9 @@ help:  ## 💬 This help message :)
 #
 # Development
 # ------------------------------------------------------------------------------
+
+image:
+	@docker build . -t $(PROJECT):$(VERSION)
 
 build: ## 🔨 Docker build
 	@echo "\nStarting build...\n"
